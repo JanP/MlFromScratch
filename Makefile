@@ -7,6 +7,9 @@ TARGET:=example
 TARGET_SRCS:=$(addsuffix .cpp,$(TARGET))
 
 CPPFLAGS:=-Wall -Wextra -Weffc++ -std=c++17
+ifeq ($(DEBUG),1)
+CPPFLAGS+=-g
+endif
 
 LIB_CPPFLAGS:=$(CPPFLAGS) -fPIC
 LIB_LDFLAGS:=-shared
