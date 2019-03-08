@@ -9,7 +9,7 @@ output_neuron() {
     std::vector<double> weights = {0.0, 1.0};
     double bias = 4.0;
 
-    Neuron n(weights, bias);
+    Neuron<Sigmoid> n(weights, bias);
 
     std::vector<double> inputs = {2.0, 3.0};
 
@@ -21,14 +21,14 @@ output_neural_network() {
     std::vector<double> weights {0.0, 1.0};
     double bias = 0;
 
-    std::vector<Neuron> hidden = {
-        Neuron(weights, bias),
-        Neuron(weights, bias)
+    std::vector<Neuron<Sigmoid> > hidden = {
+        Neuron<Sigmoid>(weights, bias),
+        Neuron<Sigmoid>(weights, bias)
     };
 
-    Neuron output(weights, bias);
+    Neuron<Sigmoid> output(weights, bias);
 
-    NeuralNetwork nn(hidden, output);
+    NeuralNetwork<Sigmoid> nn(hidden, output);
 
     std::vector<double> inputs = {2.0, 3.0};
 
